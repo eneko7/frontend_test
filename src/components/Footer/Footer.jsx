@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './Footer.scss';
+import styles from './Footer.scss';
 
 const Footer = () => (
-  <footer className={style.footer}>
-    <span className={style.footer_films}>Frontend Task</span>
-    <span className={style.footer_copyright}>
+  <footer className={styles.footer}>
+    <span className={styles.footer_films}>Frontend Task</span>
+    <span className={styles.footer_copyright}>
       Copyright ©
       {(new Date()).getFullYear()}
     </span>

@@ -1,0 +1,30 @@
+.main {
+  width: 80%;
+  margin: 20px auto;
+
+  .label_search {
+    display: block;
+    margin-bottom: 5px;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .input_search {
+    height: 30px;
+    width: 100%;
+  }
+
+  .button_search {
+    width: 100px;
+    color: #fff;
+    background-color: #0aaee4;
+    border: none;
+    display: block;
+    margin: 10px auto 0;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .button_search:focus {
+    outline: none;
+  }
+}
