@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.scss';
+import styles from './App.scss';
 import Header from '../Header';
 import Main from '../Main';
 import Footer from '../Footer';
 
 const App = () => (
-  <div className="main_container">
+  <div className={styles.main_container}>
     <Header />
     <Main />
     <Footer />

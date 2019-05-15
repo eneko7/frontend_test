@@ -1,0 +1,182 @@
+.wrapper {
+  width: 100%;
+  text-align: left;
+
+  .account {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    .account_info {
+      background-color: #fff;
+      width: 25%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-top: 3px solid #0aaee4;
+      padding: 10px;
+      height: 380px;
+
+      hr {
+        color: #0aaee4;
+        background-color: #0aaee4;
+        height: 1px;
+        border: none;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 20px;
+        object-fit: cover;
+      }
+
+      .line {
+        padding: 0 15px;
+        height: 60px;
+        display: flex;
+        border-bottom: 1px solid #0aaee4;
+        justify-content: space-between;
+      }
+
+      .title_info {
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-weight: bold;
+        line-height: 60px;
+      }
+
+      .info {
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        line-height: 60px;
+
+        a {
+          text-decoration: none;
+          color: #0aaee4;
+        }
+      }
+    }
+
+    .wrapper_repos {
+      width: 70%;
+      background-color: #fff;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-top: 3px solid #0aaee4;
+      padding: 10px;
+
+
+      .counter_repos {
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-size: 18px;
+      }
+  
+      .list_repos {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        list-style-type: none;
+  
+        .repository_item {
+          width: 46%;
+          background-color: #f5fdff;
+          padding: 15px;
+          border-top: 2px solid #0aaee4;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          margin-bottom: 20px;
+          display: block;
+
+          .lineMain {
+            display: flex;
+            justify-content: space-between;
+
+            .title_info {
+              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 40px;
+            }
+          }
+
+          .line {
+            display: block;
+
+            .title_info {
+              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+              font-weight: 600;
+              line-height: 40px;
+            }
+
+            .info {
+              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+              line-height: 40px;
+            }
+
+            .info_id {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.button___load_more {
+  width: 100px;
+  color: #fff;
+  background-color: #0aaee4;
+  border: none;
+  display: block;
+  margin: 10px 0;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.button___load_more:focus {
+  outline: none;
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    .account {
+      .wrapper_repos {
+        .list_repos {
+          .repository_item {
+            .info_id {
+              display: inline-flex;
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    .account {
+      flex-wrap: wrap;
+
+      .account_info {
+        width: 100%;
+      }
+
+      .wrapper_repos {
+        width: 100%;
+
+        .list_repos {
+          .repository_item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

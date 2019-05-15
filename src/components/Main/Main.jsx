@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import RepositoriesList from './RepositoriesList';
 import styles from './Main.scss';
 
@@ -19,16 +19,14 @@ class Main extends Component {
   render() {
     const { login } = this.state;
     return (
-      <Fragment>
-        <main className={styles.main}>
-          <form onSubmit={this.searchAction}>
-            <span className={styles.label_search}>Git nickname</span>
-            <input className={styles.input_search} type="text" ref={this.searchRef} name="search" placeholder="enter user nickname" />
-            <button className={styles.button_search} type="submit">Search</button>
-          </form>
-        </main>
+      <main className={styles.main}>
+        <form onSubmit={this.searchAction}>
+          <span className={styles.label_search}>Git nickname</span>
+          <input className={styles.input_search} type="text" ref={this.searchRef} name="search" placeholder="enter user nickname" />
+          <button className={styles.button_search} type="submit">Search</button>
+        </form>
         <RepositoriesList login={login} />
-      </Fragment>
+      </main>
     );
   }
 }

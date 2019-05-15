@@ -6,7 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import Root from './components/Root';
 
-const token = '645957034305a6d7bff9e3e94f70ce5ae783b05a';
+const token = '7bf8823e7bca821aa117669f6bffba4f5c0419b7';
 
 const httpLink = {
   uri: 'https://api.github.com/graphql',

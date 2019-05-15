@@ -5,10 +5,10 @@
     font-size: 38px;
     color: #0aaee4;
     font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     text-align: center;
     display: block;
-    margin: 40px auto 40px auto;
+    margin: 40px auto 10px auto;
   }
 
   .footer_copyright {
@@ -17,6 +17,7 @@
     font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     text-align: center;
     display: block;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
+    padding-bottom: 20px; 
   }
 }

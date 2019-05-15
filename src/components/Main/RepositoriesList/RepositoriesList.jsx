@@ -2,21 +2,33 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import propTypes from 'prop-types';
-import styles from './RepositoriesList.scss';
+import ShowSearchRepository from './ShowSearchRepository';
 
 const reposQuery = gql`
   query Myrepositories($first: Int!, $login: String!) {
     user(login: $login) {
       id,
-      repositories(first: $first, isLocked: false, orderBy: {field: CREATED_AT, direction: ASC}) {
+      repositories(first: $first, privacy:PUBLIC, isLocked: false, orderBy: {field: CREATED_AT, direction: ASC}) {
         edges {
           node {
             id,
             name,
-            createdAt
-          }
-        }
+            createdAt,
+            description,
+            primaryLanguage {
+              id,
+              name,
+              color,
+            },
+            viewerHasStarred,
+          },
+        },
+        totalCount
       },
+      avatarUrl,
+      name,
+      login,
+      url,
     }
   }
 `;
@@ -24,16 +36,13 @@ const reposQuery = gql`
 class RepositoriesList extends Component {
   handleMore = (data, fetchMore, current) => {
     const { login } = this.props;
-    console.log(login);
     fetchMore({
-      variables: { first: current + 10, login },
+      variables: { first: current + 6, login },
       updateQuery: (prev, { fetchMoreResult }) => {
-        console.log(fetchMoreResult);
-        console.log(prev);
         if (!fetchMoreResult) {
           return prev;
         }
-        return Object.assign(prev, fetchMoreResult);
+        return { ...prev, ...fetchMoreResult };
       },
     });
   };
@@ -41,26 +50,30 @@ class RepositoriesList extends Component {
   render() {
     const { login } = this.props;
     return (
-      <Query query={reposQuery} variables={{ first: 10, login }}>
+      <Query query={reposQuery} variables={{ first: 6, login }}>
         {({
-          data, loading, error, fetchMore,
+          data, loading, error, fetchMore, refetch,
         }) => {
           if (loading) return <p>loading...</p>;
           if (error) return <p>{error.message}</p>;
           const current = data.user.repositories.edges.length;
+          const all = data.user.repositories.totalCount;
+          const user = {
+            avatarUrl: data.user.avatarUrl,
+            name: data.user.name,
+            login: data.user.login,
+            email: data.user.email,
+            url: data.user.url,
+          };
           return (
-            <div>
-              <ul>
-                <h2>{`First ${current} repositories`}</h2>
-                {data.user.repositories.edges.map(({ node }) => (
-                  <li key={node.name}>{node.name}</li>
-                ))}
-              </ul>
-
-              <button className={styles.button___load_more} type="button" onClick={() => this.handleMore(data, fetchMore, current)}>
-                Load more
-              </button>
-            </div>
+            <ShowSearchRepository
+              refetch={refetch}
+              all={all}
+              current={current}
+              data={data}
+              user={user}
+              handleMore={() => this.handleMore(data, fetchMore, current)}
+            />
           );
         }}
       </Query>

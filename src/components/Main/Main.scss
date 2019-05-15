@@ -10,7 +10,10 @@
 
   .input_search {
     height: 30px;
-    width: 100%;
+    width: 40%;
+    display: inline-block;
+    border: none;
+    text-indent: 10px;
   }
 
   .button_search {
@@ -18,7 +21,9 @@
     color: #fff;
     background-color: #0aaee4;
     border: none;
-    display: block;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: inline-block;
     margin: 10px auto 0;
     height: 30px;
     cursor: pointer;
@@ -26,5 +31,13 @@
 
   .button_search:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main {
+    .input_search {
+      width: calc(100% - 100px);
+    }
   }
 }
