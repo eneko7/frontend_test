@@ -5,7 +5,7 @@ import Main from '../Main';
 import Footer from '../Footer';
 
 const App = () => (
-  <div className={styles.main_container}>
+  <div className={styles.mainContainer}>
     <Header />
     <Main />
     <Footer />

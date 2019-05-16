@@ -2,13 +2,13 @@
   width: 80%;
   margin: 20px auto;
 
-  .label_search {
+  .labelSearch {
     display: block;
     margin-bottom: 5px;
     font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   }
 
-  .input_search {
+  .inputSearch {
     height: 30px;
     width: 40%;
     display: inline-block;
@@ -16,7 +16,7 @@
     text-indent: 10px;
   }
 
-  .button_search {
+  .buttonSearch {
     width: 100px;
     color: #fff;
     background-color: #0aaee4;
@@ -29,14 +29,14 @@
     cursor: pointer;
   }
 
-  .button_search:focus {
+  .buttonSearch:focus {
     outline: none;
   }
 }
 
 @media (max-width: 1024px) {
   .main {
-    .input_search {
+    .inputSearch {
       width: calc(100% - 100px);
     }
   }

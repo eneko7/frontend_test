@@ -21,9 +21,9 @@ class Main extends Component {
     return (
       <main className={styles.main}>
         <form onSubmit={this.searchAction}>
-          <span className={styles.label_search}>Git nickname</span>
-          <input className={styles.input_search} type="text" ref={this.searchRef} name="search" placeholder="enter user nickname" />
-          <button className={styles.button_search} type="submit">Search</button>
+          <span className={styles.labelSearch}>Git nickname</span>
+          <input className={styles.inputSearch} type="text" ref={this.searchRef} name="search" placeholder="enter user nickname" />
+          <button className={styles.buttonSearch} type="submit">Search</button>
         </form>
         <RepositoriesList login={login} />
       </main>

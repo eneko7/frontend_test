@@ -7,7 +7,7 @@
     width: 100%;
     justify-content: space-between;
 
-    .account_info {
+    .accountInfo {
       background-color: #fff;
       width: 25%;
       border-top-left-radius: 5px;
@@ -40,7 +40,7 @@
         justify-content: space-between;
       }
 
-      .title_info {
+      .titleInfo {
         font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         font-weight: bold;
         line-height: 60px;
@@ -57,7 +57,7 @@
       }
     }
 
-    .wrapper_repos {
+    .wrapperRepos {
       width: 70%;
       background-color: #fff;
       border-top-left-radius: 5px;
@@ -65,69 +65,23 @@
       border-top: 3px solid #0aaee4;
       padding: 10px;
 
-      .counter_repos {
+      .counterRepos {
         font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         font-size: 18px;
       }
 
-      .list_repos {
+      .listRepos {
         padding: 0;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         list-style-type: none;
-
-        .repository_item {
-          width: 46%;
-          background-color: #f5fdff;
-          padding: 15px;
-          border-top: 2px solid #0aaee4;
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-          margin-bottom: 20px;
-          display: block;
-
-          .lineMain {
-            display: flex;
-            justify-content: space-between;
-
-            .title_info {
-              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-              font-weight: 600;
-              font-size: 20px;
-              line-height: 40px;
-            }
-          }
-
-          .line {
-            display: block;
-
-            .title_info {
-              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-              font-weight: 600;
-              line-height: 40px;
-            }
-
-            .info {
-              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-              line-height: 40px;
-            }
-
-            .info_id {
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              overflow: hidden;
-              font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-              line-height: 40px;
-            }
-          }
-        }
       }
     }
   }
 }
 
-.button___load_more {
+.buttonLoadMore {
   width: 100px;
   color: #fff;
   background-color: #0aaee4;
@@ -139,25 +93,8 @@
   border-radius: 3px;
 }
 
-.button___load_more:focus {
+.buttonLoadMore:focus {
   outline: none;
-}
-
-@media (max-width: 450px) {
-  .wrapper {
-    .account {
-      .wrapper_repos {
-        .list_repos {
-          .repository_item {
-            .info_id {
-              display: inline-flex;
-              width: 200px;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 @media (max-width: 1024px) {
@@ -165,18 +102,12 @@
     .account {
       flex-wrap: wrap;
 
-      .account_info {
+      .accountInfo {
         width: 100%;
       }
 
-      .wrapper_repos {
+      .wrapperRepos {
         width: 100%;
-
-        .list_repos {
-          .repository_item {
-            width: 100%;
-          }
-        }
       }
     }
   }

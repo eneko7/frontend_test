@@ -3,8 +3,8 @@ import styles from './Footer.scss';
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <span className={styles.footer_films}>Frontend Task</span>
-    <span className={styles.footer_copyright}>
+    <span className={styles.footerTask}>Frontend Task</span>
+    <span className={styles.footerCopyright}>
       Copyright ©
       {(new Date()).getFullYear()}
     </span>

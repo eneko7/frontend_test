@@ -1,0 +1,60 @@
+.repositoryItem {
+  width: 46%;
+  background-color: #f5fdff;
+  padding: 15px;
+  border-top: 2px solid #0aaee4;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 20px;
+  display: block;
+
+  .lineMain {
+    display: flex;
+    justify-content: space-between;
+
+    .titleInfo {
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+
+  .line {
+    display: block;
+
+    .titleInfo {
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-weight: 600;
+      line-height: 40px;
+    }
+
+    .info {
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      line-height: 40px;
+    }
+
+    .infoId {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      line-height: 40px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .repositoryItem {
+    .infoId {
+      display: inline-flex;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .repositoryItem {
+    width: 100%;
+  }
+}
