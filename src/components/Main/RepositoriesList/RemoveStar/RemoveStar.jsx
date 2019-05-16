@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
+import React from 'react';
+import propTypes from 'prop-types';
 import { gql } from 'apollo-boost';
+import { Mutation } from 'react-apollo';
 import styles from './RemoveStar.scss';
 
-const removeStarquery = gql`
+const removeStarQuery = gql`
   mutation RemoveStar($repoid:ID!){
     removeStar(input:{starrableId:$repoid}){
       starrable{
@@ -18,33 +17,33 @@ const removeStarquery = gql`
   }
 `;
 
-class RemoveStar extends Component {
-  render() {
-    const { id, refetch } = this.props;
-    return (
-      <Mutation mutation={removeStarquery}>
+const RemoveStar = ({ id, refetch }) => (
+  <Mutation mutation={removeStarQuery}>
 
-        {(removeStar, { loading, error }) => (
-          <div>
-            <button
-              type="button"
-              className={styles.star}
-              onClick={() => {
-                removeStar({ variables: { repoid: id } })
-                  .then(() => {
-                    refetch();
-                  });
-              }}
-            />
+    {(removeStar, { loading, error }) => (
+      <div>
+        <button
+          type="button"
+          className={styles.star}
+          onClick={() => {
+            removeStar({ variables: { repoid: id } })
+              .then(() => {
+                refetch();
+              });
+          }}
+        />
 
-            {loading && <p>remove...</p>}
-            {error && <p>{error.message}</p>}
-          </div>
-        )}
+        {loading && <p>remove...</p>}
+        {error && <p>{error.message}</p>}
+      </div>
+    )}
 
-      </Mutation>
-    );
-  }
-}
+  </Mutation>
+);
+
+RemoveStar.propTypes = {
+  id: propTypes.string.isRequired,
+  refetch: propTypes.func.isRequired,
+};
 
 export default RemoveStar;

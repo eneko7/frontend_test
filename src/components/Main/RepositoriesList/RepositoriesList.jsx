@@ -1,37 +1,8 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
-import { gql } from 'apollo-boost';
 import propTypes from 'prop-types';
 import ShowSearchRepository from './ShowSearchRepository';
-
-const reposQuery = gql`
-  query Myrepositories($first: Int!, $login: String!) {
-    user(login: $login) {
-      id,
-      repositories(first: $first, privacy:PUBLIC, isLocked: false, orderBy: {field: CREATED_AT, direction: ASC}) {
-        edges {
-          node {
-            id,
-            name,
-            createdAt,
-            description,
-            primaryLanguage {
-              id,
-              name,
-              color,
-            },
-            viewerHasStarred,
-          },
-        },
-        totalCount
-      },
-      avatarUrl,
-      name,
-      login,
-      url,
-    }
-  }
-`;
+import repositoriesQuery from './queries';
 
 class RepositoriesList extends Component {
   handleMore = (data, fetchMore, current) => {
@@ -50,7 +21,7 @@ class RepositoriesList extends Component {
   render() {
     const { login } = this.props;
     return (
-      <Query query={reposQuery} variables={{ first: 6, login }}>
+      <Query query={repositoriesQuery} variables={{ first: 6, login }}>
         {({
           data, loading, error, fetchMore, refetch,
         }) => {

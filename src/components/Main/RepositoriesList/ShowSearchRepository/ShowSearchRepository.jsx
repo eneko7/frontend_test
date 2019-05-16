@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import propTypes from 'prop-types';
 import AddStar from '../AddStar';
 import RemoveStar from '../RemoveStar';
 import styles from './ShowSearchRepository.scss';
@@ -61,7 +62,6 @@ const ShowSearchRepository = ({
             </li>
           ))}
         </ul>
-        {/* <span style={{ color: 'red' }}>&#9733;</span> */}
         <button className={styles.button___load_more} type="button" onClick={handleMore} style={{ display: all === current ? 'none' : 'block' }}>
           show more
         </button>
@@ -69,5 +69,13 @@ const ShowSearchRepository = ({
     </div>
   </div>
 );
+
+ShowSearchRepository.propTypes = {
+  all: propTypes.number.isRequired,
+  current: propTypes.number.isRequired,
+  handleMore: propTypes.func.isRequired,
+  user: propTypes.objectOf(propTypes.string).isRequired,
+  refetch: propTypes.func.isRequired,
+};
 
 export default ShowSearchRepository;

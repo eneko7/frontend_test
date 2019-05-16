@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    
+
     .account_info {
       background-color: #fff;
       width: 25%;
@@ -65,19 +65,18 @@
       border-top: 3px solid #0aaee4;
       padding: 10px;
 
-
       .counter_repos {
         font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         font-size: 18px;
       }
-  
+
       .list_repos {
         padding: 0;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         list-style-type: none;
-  
+
         .repository_item {
           width: 46%;
           background-color: #f5fdff;
@@ -127,6 +126,7 @@
     }
   }
 }
+
 .button___load_more {
   width: 100px;
   color: #fff;
@@ -138,6 +138,7 @@
   cursor: pointer;
   border-radius: 3px;
 }
+
 .button___load_more:focus {
   outline: none;
 }
