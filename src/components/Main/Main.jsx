@@ -3,17 +3,25 @@ import RepositoriesList from './RepositoriesList';
 import styles from './Main.scss';
 
 class Main extends Component {
-  searchRef = React.createRef();
-
+  // searchRef = React.createRef();
   state = {
     login: 'eneko7',
   };
 
+  updateSearchName = (event) => {
+    if (event.target.value === '') {
+      this.setState({
+        login: 'eneko7',
+      });
+    } else {
+      this.setState({
+        login: event.target.value,
+      });
+    }
+  };
+
   searchAction = (event) => {
     event.preventDefault();
-    this.setState({
-      login: this.searchRef.current.value,
-    });
   };
 
   render() {
@@ -22,7 +30,7 @@ class Main extends Component {
       <main className={styles.main}>
         <form onSubmit={this.searchAction}>
           <span className={styles.labelSearch}>Git nickname</span>
-          <input className={styles.inputSearch} type="text" ref={this.searchRef} name="search" placeholder="enter user nickname" />
+          <input className={styles.inputSearch} type="text" onChange={this.updateSearchName} name="search" placeholder="enter user nickname" />
           <button className={styles.buttonSearch} type="submit">Search</button>
         </form>
         <RepositoriesList login={login} />
