@@ -14,7 +14,7 @@ class ShowSearchRepository extends Component {
 
   render() {
     const {
-      all, current, data, handleMore, user,
+      all, current, data, user, fetchMore, onClick,
     } = this.props;
     return (
       <div className={styles.wrapper}>
@@ -40,7 +40,7 @@ class ShowSearchRepository extends Component {
             <ul className={styles.listRepos}>
               {data.user.repositories.edges.map(this.renderRepository)}
             </ul>
-            <button className={styles.buttonLoadMore} type="button" onClick={handleMore} style={{ display: all === current ? 'none' : 'block' }}>
+            <button className={styles.buttonLoadMore} type="button" onClick={() => onClick(data, fetchMore, current)} style={{ display: all === current ? 'none' : 'block' }}>
               show more
             </button>
           </div>
@@ -53,7 +53,7 @@ class ShowSearchRepository extends Component {
 ShowSearchRepository.propTypes = {
   all: propTypes.number.isRequired,
   current: propTypes.number.isRequired,
-  handleMore: propTypes.func.isRequired,
+  onClick: propTypes.func.isRequired,
   user: propTypes.objectOf(propTypes.string).isRequired,
   refetch: propTypes.func.isRequired,
 };
