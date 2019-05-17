@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { gql } from 'apollo-boost';
 import { Mutation } from 'react-apollo';
@@ -17,29 +17,33 @@ const removeStarQuery = gql`
   }
 `;
 
-const RemoveStar = ({ id, refetch }) => (
-  <Mutation mutation={removeStarQuery}>
+class RemoveStar extends Component {
+  removeHandler = (removeStar) => {
+    const { id, refetch } = this.props;
+    removeStar({ variables: { repoid: id } })
+      .then(() => {
+        refetch();
+      });
+  };
 
-    {(removeStar, { loading, error }) => (
-      <div>
-        <button
-          type="button"
-          className={styles.star}
-          onClick={() => {
-            removeStar({ variables: { repoid: id } })
-              .then(() => {
-                refetch();
-              });
-          }}
-        />
-
-        {loading && <p>remove...</p>}
-        {error && <p>{error.message}</p>}
-      </div>
-    )}
-
-  </Mutation>
-);
+  render() {
+    return (
+      <Mutation mutation={removeStarQuery}>
+        {(removeStar, { loading, error }) => (
+          <div>
+            <button
+              type="button"
+              className={styles.star}
+              onClick={() => this.removeHandler(removeStar)}
+            />
+            {loading && <p>remove...</p>}
+            {error && <p>{error.message}</p>}
+          </div>
+        )}
+      </Mutation>
+    );
+  }
+}
 
 RemoveStar.propTypes = {
   id: propTypes.string.isRequired,
