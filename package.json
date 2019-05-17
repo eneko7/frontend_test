@@ -1,7 +1,7 @@
 {
   "name": "frontend_test",
   "version": "1.0.0",
-  "description": "React Homework (SPA- Films)",
+  "description": "React Test Task (GitHub)",
   "scripts": {
     "start": "cross-env NODE_ENV=development node server",
     "build": "cross-env NODE_ENV=production webpack -p --config ./webpack.config.js",
@@ -66,6 +66,7 @@
     "express": "^4.16.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
+    "firebase": "^6.0.2",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
     "html-webpack-plugin": "^4.0.0-beta.2",
@@ -79,6 +80,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-apollo": "^2.5.5",
+    "react-auth-firebase": "^1.2.1",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-test-renderer": "^16.6.0",
