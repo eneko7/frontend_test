@@ -26,7 +26,9 @@ class RepositoriesList extends Component {
           data, loading, error, fetchMore, refetch,
         }) => {
           if (loading) return <p>loading...</p>;
+
           if (error) return <p>{error.message}</p>;
+
           const current = data.user.repositories.edges.length;
           const all = data.user.repositories.totalCount;
           const user = {
@@ -36,6 +38,7 @@ class RepositoriesList extends Component {
             email: data.user.email,
             url: data.user.url,
           };
+
           return (
             <ShowSearchRepository
               refetch={refetch}
