@@ -1,8 +1,10 @@
+@import "../../../../../utils/constants.scss";
+
 .repositoryItem {
   width: 46%;
-  background-color: #f5fdff;
+  background-color: $repository-background-color;
   padding: 15px;
-  border-top: 2px solid #0aaee4;
+  border-top: 2px solid $main-color;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin-bottom: 20px;
@@ -13,7 +15,7 @@
     justify-content: space-between;
 
     .titleInfo {
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-family: $font-family;
       font-weight: 600;
       font-size: 20px;
       line-height: 40px;
@@ -24,13 +26,13 @@
     display: block;
 
     .titleInfo {
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-family: $font-family;
       font-weight: 600;
       line-height: 40px;
     }
 
     .info {
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-family: $font-family;
       line-height: 40px;
     }
 
@@ -38,13 +40,13 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-family: $font-family;
       line-height: 40px;
     }
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: $small_mobile) {
   .repositoryItem {
     .infoId {
       display: inline-flex;
@@ -53,7 +55,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $mobile) {
   .repositoryItem {
     width: 100%;
   }

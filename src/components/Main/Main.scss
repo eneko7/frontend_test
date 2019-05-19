@@ -1,3 +1,5 @@
+@import "../../utils/constants.scss";
+
 .main {
   width: 80%;
   margin: 20px auto;
@@ -5,7 +7,7 @@
   .labelSearch {
     display: block;
     margin-bottom: 5px;
-    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-family: $font-family;
   }
 
   .inputSearch {
@@ -18,8 +20,8 @@
 
   .buttonSearch {
     width: 100px;
-    color: #fff;
-    background-color: #0aaee4;
+    color: $white-color;
+    background-color: $main-color;
     border: none;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -27,14 +29,14 @@
     margin: 10px auto 0;
     height: 30px;
     cursor: pointer;
-  }
 
-  .buttonSearch:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $mobile) {
   .main {
     .inputSearch {
       width: calc(100% - 100px);

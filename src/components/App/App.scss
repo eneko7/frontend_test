@@ -1,8 +1,10 @@
+@import "../../utils/constants.scss";
+
 body {
   width: 100%;
   margin: 0;
-}
 
-.mainContainer {
-  background-color: #ecf0f5;
+  .mainContainer {
+    background-color: $main-container-color;
+  }
 }

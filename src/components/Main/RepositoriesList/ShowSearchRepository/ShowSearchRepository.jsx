@@ -22,7 +22,11 @@ const ShowSearchRepository = ({
         </span>
         <span className={styles.line}>
           <span className={styles.titleInfo}>Link: </span>
-          <span className={styles.info}><a target="_blank" rel="noopener noreferrer" href={user.url}>{user.url}</a></span>
+          <span className={styles.info}>
+            <a target="_blank" rel="noopener noreferrer" className={styles.link} href={user.url}>
+              {user.url}
+            </a>
+          </span>
         </span>
       </div>
       <div className={styles.wrapperRepos}>
