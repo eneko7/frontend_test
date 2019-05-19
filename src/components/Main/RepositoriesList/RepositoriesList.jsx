@@ -43,7 +43,8 @@ class RepositoriesList extends Component {
               current={current}
               data={data}
               user={user}
-              handleMore={() => this.handleMore(data, fetchMore, current)}
+              fetchMore={fetchMore}
+              onClick={this.handleMore}
             />
           );
         }}
