@@ -1,21 +1,8 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { gql } from 'apollo-boost';
 import { Mutation } from 'react-apollo';
+import { addStarQuery } from '../../../../utils/mutatinos';
 import styles from './AddStar.scss';
-
-const addStarQuery = gql`
-  mutation AddStar($repoid:ID!){
-    addStar(input:{starrableId:$repoid}){
-      starrable{
-        stargazers{
-          totalCount
-        }
-        viewerHasStarred
-      }
-    }
-  }
-`;
 
 class AddStar extends Component {
   addHandler = (addStar) => {

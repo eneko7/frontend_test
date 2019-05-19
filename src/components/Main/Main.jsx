@@ -3,7 +3,6 @@ import RepositoriesList from './RepositoriesList';
 import styles from './Main.scss';
 
 class Main extends Component {
-  // searchRef = React.createRef();
   state = {
     login: 'eneko7',
   };
