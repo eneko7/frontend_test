@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import propTypes from 'prop-types';
 import ShowSearchRepository from './ShowSearchRepository';
-import repositoriesQuery from './queries';
+import repositoriesQuery from '../../../utils/queries';
 
 class RepositoriesList extends Component {
   handleMore = (data, fetchMore, current) => {

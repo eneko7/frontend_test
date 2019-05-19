@@ -1,21 +1,8 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { gql } from 'apollo-boost';
 import { Mutation } from 'react-apollo';
+import { removeStarQuery } from '../../../../utils/mutatinos';
 import styles from './RemoveStar.scss';
-
-const removeStarQuery = gql`
-  mutation RemoveStar($repoid:ID!){
-    removeStar(input:{starrableId:$repoid}){
-      starrable{
-        stargazers{
-          totalCount
-        }
-        viewerHasStarred
-      }
-    }
-  }
-`;
 
 class RemoveStar extends Component {
   removeHandler = (removeStar) => {

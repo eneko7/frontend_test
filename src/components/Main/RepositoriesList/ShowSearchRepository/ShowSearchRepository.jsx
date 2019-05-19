@@ -32,15 +32,26 @@ class ShowSearchRepository extends Component {
             </span>
             <span className={styles.line}>
               <span className={styles.titleInfo}>Link: </span>
-              <span className={styles.info}><a target="_blank" rel="noopener noreferrer" href={user.url}>{user.url}</a></span>
+              <span className={styles.info}>
+                <a target="_blank" rel="noopener noreferrer" className={styles.link} href={user.url}>
+                  {user.url}
+                </a>
+              </span>
             </span>
           </div>
           <div className={styles.wrapperRepos}>
-            <span className={styles.counterRepos}>{`First ${current} repositories out of ${all}`}</span>
+            <span className={styles.counterRepos}>
+              {`First ${current} repositories out of ${all}`}
+            </span>
             <ul className={styles.listRepos}>
               {data.user.repositories.edges.map(this.renderRepository)}
             </ul>
-            <button className={styles.buttonLoadMore} type="button" onClick={() => onClick(data, fetchMore, current)} style={{ display: all === current ? 'none' : 'block' }}>
+            <button
+              className={styles.buttonLoadMore}
+              type="button"
+              onClick={() => onClick(data, fetchMore, current)}
+              style={{ display: all === current ? 'none' : 'block' }}
+            >
               show more
             </button>
           </div>

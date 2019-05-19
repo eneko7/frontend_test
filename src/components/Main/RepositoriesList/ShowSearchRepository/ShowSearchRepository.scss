@@ -1,3 +1,5 @@
+@import "../../../../utils/constants.scss";
+
 .wrapper {
   width: 100%;
   text-align: left;
@@ -8,17 +10,17 @@
     justify-content: space-between;
 
     .accountInfo {
-      background-color: #fff;
+      background-color: $white-color;
       width: 25%;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      border-top: 3px solid #0aaee4;
+      border-top: 3px solid $main-color;
       padding: 10px;
       height: 380px;
 
       hr {
-        color: #0aaee4;
-        background-color: #0aaee4;
+        color: $main-color;
+        background-color: $main-color;
         height: 1px;
         border: none;
       }
@@ -36,37 +38,37 @@
         padding: 0 15px;
         height: 60px;
         display: flex;
-        border-bottom: 1px solid #0aaee4;
+        border-bottom: 1px solid $main-color;
         justify-content: space-between;
       }
 
       .titleInfo {
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-family: $font-family;
         font-weight: bold;
         line-height: 60px;
       }
 
       .info {
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-family: $font-family;
         line-height: 60px;
 
-        a {
+        .link {
           text-decoration: none;
-          color: #0aaee4;
+          color: $main-color;
         }
       }
     }
 
     .wrapperRepos {
       width: 70%;
-      background-color: #fff;
+      background-color: $white-color;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      border-top: 3px solid #0aaee4;
+      border-top: 3px solid $main-color;
       padding: 10px;
 
       .counterRepos {
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-family: $font-family;
         font-size: 18px;
       }
 
@@ -83,21 +85,21 @@
 
 .buttonLoadMore {
   width: 100px;
-  color: #fff;
-  background-color: #0aaee4;
+  color: $white-color;
+  background-color: $main-color;
   border: none;
   display: block;
   margin: 10px 0;
   height: 30px;
   cursor: pointer;
   border-radius: 3px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
-.buttonLoadMore:focus {
-  outline: none;
-}
-
-@media (max-width: 1024px) {
+@media (max-width: $mobile) {
   .wrapper {
     .account {
       flex-wrap: wrap;
